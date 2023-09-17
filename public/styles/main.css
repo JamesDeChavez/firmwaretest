@@ -1,4 +1,170 @@
 body {
-    background-color: white;
+    background-color: #eeeff1;
     color: black;
+    margin: 0;
+    padding: 0;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+h1, h2, p {
+  margin: 0;
+  color: #FFFFFF;
+}
+
+nav {
+  display: flex;
+  padding: 1rem;
+  box-shadow: 1px 1px 10px #00000030;
+}
+
+.logo {
+  width: clamp(10rem, 20vw, 20rem);
+}
+
+header {
+  background: url(https://ptzoptics.com/wp-content/themes/PTZOptics/images/banner-inner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  place-content: center;
+  min-height: 200px;
+  position: relative;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000a1;
+}
+
+h1 {
+  place-self: center;
+  z-index: 2;
+  font-size: 3rem;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.formContainer {
+  display: grid;
+  padding: 2rem;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  row-gap: 1rem;
+  border-radius: 5px;
+  background-color: #35404c;
+  height: min-content;
+  color: #FFFFFF;
+  width: 540px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.modelContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.formButton {
+  background-color: #3066be;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF
+}
+
+.formButton:hover {
+  cursor: pointer;
+  background-color: #1d3461;
+  transition: 0.3s;
+}
+
+.formButton:disabled {
+  background-color: #3066be;
+  opacity: 0.5;
+}
+
+.formButton:disabled:hover {
+  cursor: default;
+  background-color: #3066be;
+  opacity: 0.5;
+  transition: 0s;
+}
+
+
+.progressContainer, .updateSuccessContainer {
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #000000;
+  color: #FFFFFF
+}
+
+footer > p > a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+footer > p > a:hover {
+  color: #046aa0
+}
+
+.loadingSvg {
+  height: 1rem;
+  width: auto;
+  place-self: center;
+}
+
+.circle1 {
+  fill: #FFFFFF;
+  animation: loading 1.2s linear 0s infinite normal;
+}
+
+.circle2 {
+  fill: #FFFFFF;
+  animation: loading 1.2s linear 0.4s infinite normal;
+}
+
+
+.circle3 {
+  fill: #FFFFFF;
+  animation: loading 1.2s linear 0.8s infinite normal;
+}
+
+@keyframes loading {
+  0% { opacity: 1;}
+  50% { opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@media screen and (max-width: 650px) {
+  form {
+    width: auto
   }
+}
