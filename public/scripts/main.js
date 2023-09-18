@@ -7,6 +7,7 @@ const getFirmwareInfo = async (model) => {
         return data
     } catch (error) {
         console.log(error)
+        return error
     }
 }
 
@@ -20,6 +21,7 @@ const getCurrentVersion = async () => {
         return data.slice(startIdx, endIdx).trim()
     } catch (error) {
         console.log(error)
+        return error
     }
 }
 
@@ -35,6 +37,7 @@ const checkIfUpdatedNeeded =  async (model) => {
         }
     } catch (error) {
         console.log(error)
+        return error
     }
 }
 
@@ -55,6 +58,7 @@ const getFirmware = async (model) => {
         return 'success'
     } catch (error) {
         console.log(error)
+        return error
     }
 }
 
@@ -75,6 +79,7 @@ const getLogFile = async (model) => {
         return 'success'
     } catch (error) {
         console.log(error)
+        return error
     }
 }
 
@@ -85,6 +90,7 @@ const commenceUpdate = async () => {
         return data
     } catch (error) {
         console.log(error)
+        return error
     }
 }
 
@@ -149,6 +155,9 @@ uploadForm.addEventListener('submit', async (event) => {
     const button = uploadForm.querySelector('.formButton')
     button.disabled = true
     const formData = new FormData(uploadForm)
+    if (formData.get('file') === '') {
+        return
+    }
     try {
         const response = await fetch('/', {
             method: 'POST',
