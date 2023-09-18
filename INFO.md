@@ -16,6 +16,6 @@ jamesdechavez23@gmail.com
 - October 9-13, Noon to 6pm
 - October 16-20, Noon to 6pm
 
-# Additional Information
+## Additional Information
 
 I currently live in Seattle and I am open to relocation to PA. Hopefully, it is possible to do these interviews virtually.

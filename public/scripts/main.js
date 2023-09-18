@@ -151,13 +151,13 @@ checkResultsForm.addEventListener('submit', async (event) => {
 
 uploadForm.addEventListener('submit', async (event) => {
     event.preventDefault()
-    uploadForm.querySelector('svg').classList.toggle('hide')
-    const button = uploadForm.querySelector('.formButton')
-    button.disabled = true
     const formData = new FormData(uploadForm)
     if (formData.get('file') === '') {
         return
     }
+    uploadForm.querySelector('svg').classList.toggle('hide')
+    const button = uploadForm.querySelector('.formButton')
+    button.disabled = true
     try {
         const response = await fetch('/', {
             method: 'POST',

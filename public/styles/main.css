@@ -48,7 +48,7 @@ header {
 h1 {
   place-self: center;
   z-index: 2;
-  font-size: 3rem;
+  font-size: clamp(2rem, 10vw, 3rem);
   text-align: center;
 }
 
